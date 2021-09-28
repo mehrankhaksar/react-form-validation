@@ -1,14 +1,14 @@
 import React from 'react';
+import SignUpForm from '../signupform/SignUpForm';
 
 //Image
-import formImg from '../../image/authentication.svg';
-import SignUpForm from '../signupform/SignUpForm';
+import imgSignUp from '../../image/imgSignUp.svg';
 
 const Form = () => {
     return (
         <div className="form__container">
             <div className="form__img">
-                <img src={formImg} alt="Authentication" />
+                <img src={imgSignUp} alt="Authentication" />
             </div>
             <div className="form__content">
                 <SignUpForm />

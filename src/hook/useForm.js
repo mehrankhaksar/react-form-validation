@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-const useForm = () => {
+const useForm = (validation) => {
     const [values, setValues] = useState({
         username: '',
         email: '',
@@ -8,12 +8,18 @@ const useForm = () => {
         confirmPassword: ''
     });
 
+    const [errors, setErrors] = useState({});
+
     const [focus, setFocus] = useState({
         username: false,
         email: false,
         password: false,
         confirmPassword: false
     });
+
+    useEffect(() => {
+        setErrors(validation(values));
+    }, [values, focus]);
 
     const changeHandler = (event) => {
         const {name, value} = event.target;
@@ -24,7 +30,7 @@ const useForm = () => {
         const {name} = event.target;
         setFocus({...focus, [name]: true});
     }
-
+    
     const removeFocus = (event) => {
         const {name} = event.target;
         if(!(values[name])) {
@@ -36,7 +42,7 @@ const useForm = () => {
         event.preventDefault();
     }
 
-    return { values, focus, changeHandler, addFocus, removeFocus, submitHandler }
+    return { values,errors, focus, changeHandler, addFocus, removeFocus, submitHandler }
 }
 
 export default useForm;
