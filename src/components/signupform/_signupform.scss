@@ -72,7 +72,7 @@
     width: 200px;
     position: absolute;
     right: -12.2rem;
-    font-size: var(--small-font-size);
+    font-size: 0.9rem;
     font-weight: 600;
     color: #fff;
     background: var(--error-message-color);
@@ -80,7 +80,7 @@
     border-radius: 4px;
   }
 
-  #icon__arrow {
+  #arrow__icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
