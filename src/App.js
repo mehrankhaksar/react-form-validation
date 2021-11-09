@@ -1,9 +1,12 @@
-import './styles.scss';
+import Form from "./components/form/Form";
+import "./styles.scss";
 
 function App() {
   return (
-    <div>
-      
+    <div className="mainContainer">
+      <div className="shape1"></div>
+      <div className="shape2"></div>
+      <Form />
     </div>
   );
 }
